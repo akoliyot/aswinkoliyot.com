@@ -1,0 +1,59 @@
+/*********************************************************************************
+General
+**********************************************************************************/
+figure figcaption { 
+    font-style: italic;
+    color: #999;
+    padding: .5em 1em;
+    font-size: 1em;
+    text-align: center;
+}
+
+figure img {
+	margin: 30px 0 0;
+	box-shadow: 0px 0px 11px -5px rgba(0,0,0,0.3);
+}
+
+/*********************************************************************************
+Footer
+**********************************************************************************/
+
+#social .symbol {
+	height: 30px;
+	width: 30px;
+	background-size: 22px 22px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#social .github-icon {
+	background-image: url('../images/social-icons/github.png');
+}
+
+#social .linked-in-icon {
+	background-image: url('../images/social-icons/linked-in.png');
+}
+
+#social .good-reads-icon {
+	background-image: url('../images/social-icons/good-reads.png');
+}
+
+#social .behance-icon {
+	background-image: url('../images/social-icons/behance.png');
+}
+
+#social .stack-overflow-icon {
+	background-image: url('../images/social-icons/stack-overflow.png');
+}
+
+#social .twitter-icon {
+	background-image: url('../images/social-icons/twitter.png')
+}
+
+/*********************************************************************************
+Posts
+**********************************************************************************/
+.post h2 {
+	margin: 1.5em 0 .5em;
+}
+

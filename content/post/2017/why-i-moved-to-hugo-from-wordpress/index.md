@@ -1,0 +1,43 @@
++++
+author = "Aswin Koliyot"
+title = "Why I moved to Hugo from WordPress"
+description = "The story behind the blog you're visiting now."
+date = "2017-07-23"
+tags = [
+    "stories"
+]
++++
+
+I recently started blogging on WordPress and at first it seemed like the perfect choice. I could get started quickly and focus on creating content instead of spending a lot of time building the site. Plugins were also plenty for any extra functionality I wanted to add.
+
+{{< figure src="img/my-wordpress-blog-screenshot.png" caption="Screenshot of my WordPress Blog" alt="Screenshot of my WordPress Blog" >}}
+
+
+
+## But...
+As I started writing posts and making modifications to get the theme running just the way I wanted it to, the entire process felt a little sluggish. I wanted something even simpler and faster.
+
+Moreover, I would need to constantly make sure my WordPress installation and all of its plugins are up to date to make it secure.
+
+When I needed to add an image slider to one of my posts, I tried 3 different plugins before I settled on Soliloquy slider. It had a clean UI and was quite easy to set up. Which brings me to the state of the plugins for WordPress. It seems like there's a lot of spammy content out there, especially for the basic things a lot of people would need for their website. I didn't want to have to go through anything like that again.
+
+WordPress is excellent for providing a good UI for managing the website itself. You could add logos, images, edit the header and footer without diving into the code at all. In my case though, I found myself doing a lot of these changes by editing the code because I wanted to tweak some settings that weren't available to me through the UI.
+
+A few weeks of this and I figured something needed to change.
+
+## Exploring other options
+I came across an article by [Sara Soueidan](https://www.sarasoueidan.com/blog/jekyll-ghpages-to-hugo-netlify/) where she talks about how she was using Hugo for her new website. Intrigued, I took a look. Skimming through the docs I thought Hugo was simple enough to get started with. 
+
+I quickly learned how to set up a sample project and figured out the bare essentials. Hugo also provided lots of themes and a great documentation. 
+
+At this time, I was also playing around with Grav - a flat file CMS - to see if it would be a good fit for my blog. Being lightweight, quick and with an admin panel plugin that provided similar functionality to the WordPress admin panel, it seemed like the perfect replacement. 
+
+For me Hugo and Grav presented a similar learning curve, and after a little more playing around I went back to Hugo.
+Sara's article about her migration to Hugo was very helpful for me in understanding some concepts of Hugo, and it's probably why I went with it. 
+
+In my opinion, if you're considering making a blog you can't go wrong with either of them.
+
+## Some other facts
+* This is the third itration of my blog. Built the first one using core PHP and MySQL because I wanted to get into back-end development. Then I moved to WordPress because I wanted to take the blog in a different direction, and now I finally settled on Hugo.
+* The theme I'm using is: https://themes.gohugo.io/hugo-theme-cactus-plus. Big thanks to [nodejh](https://github.com/nodejh) for making it.
+
