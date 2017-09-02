@@ -1,6 +1,6 @@
 # Site settings
 # baseURL = "https://localhost:1313"
-baseURL = "linguist-calendar-34855.netlify.com"
+baseURL = "/"
 
 # HTML Language Code Reference, such as en, zh-cn
 languageCode = "en"
