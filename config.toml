@@ -1,9 +1,12 @@
 # Site settings
-baseURL = "https://localhost:1313"
+# baseURL = "https://localhost:1313"
+baseURL = "linguist-calendar-34855.netlify.com"
+
 # HTML Language Code Reference, such as en, zh-cn
 languageCode = "en"
 title = "Blog Title"
 theme = "hugo-theme-cactus-plus"
+
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = "your_google_analytics_code"
 hasCJKLanguage = true
