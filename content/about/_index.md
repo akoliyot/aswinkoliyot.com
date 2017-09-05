@@ -4,12 +4,7 @@ title = "About"
 hidden = true
 +++
 
-Aswin Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ullam earum dolorum! Sed, perspiciatis.
+### Hi There!
+I'm Aswin and this is my home on the web. Thank you for visiting and have a great day! 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-***
-
-### Lorem ipsum dolor.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis.
+PS: Remember to smile :)
