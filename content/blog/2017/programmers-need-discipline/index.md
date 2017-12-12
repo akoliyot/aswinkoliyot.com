@@ -4,7 +4,7 @@ title = "Why programmers need discipline"
 description = "Lessons learned from a project I never completed"
 date = "2017-08-05"
 tags = [
-	"stories"
+	"story"
 ]
 +++
 

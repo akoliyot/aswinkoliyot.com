@@ -4,7 +4,7 @@ title = "Why I moved to Hugo from WordPress"
 description = "The story behind the blog you're visiting now"
 date = "2017-07-23"
 tags = [
-    "stories"
+    "story"
 ]
 +++
 

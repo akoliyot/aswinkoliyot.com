@@ -4,7 +4,9 @@ title = "Facebook Graph API v2.9"
 description = "Endpoints for some common requests"
 
 date = 2017-09-20T19:25:41+05:30
-draft = false
+tags = [
+	"quick-reference"
+]
 +++
 
 Use the [Graph API Explorer](https://developers.facebook.com/tools/explorer/) to create an access token for testing.
