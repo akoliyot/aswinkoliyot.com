@@ -4,7 +4,7 @@ baseURL = "/"
 
 # HTML Language Code Reference, such as en, zh-cn
 languageCode = "en"
-title = "Blog Title"
+title = "Aswin's Blog"
 theme = "hugo-theme-cactus-plus"
 
 # Enter your tracking code to enable Google Analytics
@@ -78,3 +78,4 @@ hasCJKLanguage = true
     behance-icon = "https://www.behance.net/akoliyot"
     stack-overflow-icon = "http://stackoverflow.com/users/3959742/aswin-koliyot"
     twitter-icon = "https://twitter.com/AKoliyot"
+    codepen-icon = "https://codepen.io/akoliyot/"

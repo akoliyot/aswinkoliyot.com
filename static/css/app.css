@@ -47,6 +47,10 @@ Footer
 	background-image: url('../images/social-icons/github.png');
 }
 
+#social .codepen-icon {
+	background-image: url('../images/social-icons/codepen.png');
+}
+
 #social .linked-in-icon {
 	background-image: url('../images/social-icons/linked-in.png');
 }
