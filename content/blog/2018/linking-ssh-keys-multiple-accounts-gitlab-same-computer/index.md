@@ -10,29 +10,50 @@ tags = [
 ]
 +++
 
-Setting up ssh keys for multiple accounts on Gitlab.
+In order for your computer to be able to identify which ssh key to use for which account, you need to specify an ssh configuration. On a Mac you can do this by creating a file called "config" inside "/Users/Aswin/.ssh"
 
-The host can be anything you like, but keep in mind that you’ll need to update the 
-url you use when cloning and such.
+Suppose you have 2 Gitlab accounts like below and you want to access your personal repo from your personal account and your work repo from your work account: 
+```
 
 Personal: 
-akoliyot
-akoliyot@gmail.com
-wherethebinaryLives34D#F
-https://gitlab.com/akoliyot/my-personal-repo
+johndoe
+johndoe@gmail.com
+your_password
+https://gitlab.com/johndoe/my-personal-repo
 
-Codinent:
-akoliyot02
-aswin@codinent.com
-thisisHappening34#D
-https://gitlab.com/akoliyot02/my-codinent-repo
+Work:
+johndoe2
+johndoe@work-place.com
+your_password_2
+https://gitlab.com/johndoe2/my-work-repo
+```
 
-ssh-keygen -t rsa -C “your_name@home_email.com”
+You can set up your config like below but before it can work you'll also need to setup your ssh keys – there are lots of tutorials on how to do this for each OS, so please search.
 
-git clone git@gitlab.com-akoliyot:akoliyot/my-personal-repo.git asdf
-git clone git@github.com-user1:user1/your-repo-name.git your-repo-name_user1
+The host can be anything you like, but keep in mind that you’ll need to update the url you use when cloning and such.
+```
+// johndoe on Gitlab
+Host me.gitlab.com
+    Hostname gitlab.com
+    User git
+    IdentityFile ~/.ssh/gitlab
 
-me.gitlab.com
-codinent.gitlab.com
+// johndoe2 on Gitlab (Codinent)
+Host work.gitlab.com
+    Hostname gitlab.com
+    User git
+    PubKeyAuthentication yes
+    IdentityFile ~/.ssh/gitlab-work
+```
 
-ssh-keygen -t rsa -C “github-user1” -f “github-user1”
+Now for any new repos that you want to clone you can modify the URL to use your custom host – this will specify which ssh key to use.
+
+```
+// For a url: https://gitlab.com/gitlab-org/gitlab-ce
+
+// When you want to use your personal ssh key: 
+https://me.gitlab.com/gitlab-org/gitlab-ce
+
+// When you want to use your work ssh key: 
+https://work.gitlab.com/gitlab-org/gitlab-ce
+```
