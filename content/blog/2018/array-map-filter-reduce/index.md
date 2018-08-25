@@ -1,0 +1,39 @@
++++
+author = "Aswin Koliyot"
+title = "Map, Reduce, and Filter"
+description = "Learn about JavaScript Array methods: Map, Filter and Reduce"
+
+date = 2018-08-15T19:07:38+05:30
+draft = true
+
+tags = [
+  "tutorial"
+]
++++
+
+```map()```, ```reduce()```, and ```filter()``` are 3 of the many built-in array methods in JavaScript. They allow us to perform calculations or conditional operations on each array element and returns the result.
+
+## Map
+```
+let arr = [1, 2, 3, 4, 5];
+let result = arr.map(el => el * 2); // [2, 4, 6, 8, 10]
+```
+
+The map method returns an array after performing some operation on each item on the array. 
+
+## Reduce
+```
+let arr = [1, 2, 3, 4];
+let result = arr.reduce((acc, el) => {
+  return acc + el;
+})
+// result = 10;
+```
+Use the reduce function when you want to reduce (aggregate) the elements inside an array into a single value.
+
+## Filter
+```
+let words = ['anomalistic', 'cuddlesome', 'proficuous', 'cat', 'dog'];
+let longWords = words.filter(word => word.length > 7);
+```
+The filter method can be used to filter out elements in an array based on any condition you provide.
