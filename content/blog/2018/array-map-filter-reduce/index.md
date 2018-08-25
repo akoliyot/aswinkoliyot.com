@@ -4,7 +4,6 @@ title = "Map, Reduce, and Filter"
 description = "Learn about JavaScript Array methods: Map, Filter and Reduce"
 
 date = 2018-08-15T19:07:38+05:30
-draft = true
 
 tags = [
   "tutorial"
