@@ -1,2 +1,0 @@
-# aswinkoliyot.com
-Personal website
