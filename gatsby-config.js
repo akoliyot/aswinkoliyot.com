@@ -5,6 +5,13 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        allExtensions: true
+      }
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
