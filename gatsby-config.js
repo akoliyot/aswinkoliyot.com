@@ -39,6 +39,7 @@ module.exports = {
         path: `${__dirname}/src/blog`
       }
     },
+    `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

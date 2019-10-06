@@ -4,11 +4,12 @@ import Img from "gatsby-image";
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark;
-  let featuredImgFluid;
+  console.log(data);
+  const { mdx } = data; // data.markdownRemark holds our post data
+  const { frontmatter, html } = mdx;
 
-  featuredImgFluid = frontmatter.featuredImage
+  let featuredImgFluid;
+  featuredImgFluid = frontmatter["featuredImage"]
     ? frontmatter.featuredImage.childImageSharp.fluid
     : null;
 
@@ -28,7 +29,7 @@ export default function Template({
 }
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    mdx(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
