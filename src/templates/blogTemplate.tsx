@@ -1,12 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }) {
   console.log(data);
   const { mdx } = data; // data.markdownRemark holds our post data
-  const { frontmatter, html } = mdx;
+  const { frontmatter, body } = mdx;
 
   let featuredImgFluid;
   featuredImgFluid = frontmatter["featuredImage"]
@@ -19,10 +21,7 @@ export default function Template({
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
         {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <MDXRenderer>{body}</MDXRenderer>
       </div>
     </div>
   );
@@ -30,7 +29,7 @@ export default function Template({
 export const pageQuery = graphql`
   query($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
-      html
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
