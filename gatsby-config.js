@@ -36,7 +36,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/src/blog`
+        path: `${__dirname}/src/posts`
       }
     },
     `gatsby-plugin-mdx`,
