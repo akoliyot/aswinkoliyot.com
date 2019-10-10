@@ -1,7 +1,8 @@
 import React from "react";
-import PostLink from "../components/postLink";
+import { PostLink } from "../components/postLink";
 import { App } from "../components/App";
-import Layout from "../components/layout";
+import { Layout } from "../components/Layout";
+import { Profile } from "../components/Profile";
 
 const IndexPage = ({
   data: {
@@ -13,6 +14,7 @@ const IndexPage = ({
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
   return (
     <App>
+      <Profile />
       <Layout>
         <div>{Posts}</div>
       </Layout>
@@ -29,9 +31,10 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM DD")
             path
             title
+            description
           }
         }
       }
