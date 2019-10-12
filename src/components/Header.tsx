@@ -1,9 +1,11 @@
 import { Link } from "./Link";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { ThemeContext } from "styled-components";
 
 const StyledHeader = styled.div`
+  background: orange;
   nav {
     text-align: right;
 
@@ -16,23 +18,27 @@ const StyledHeader = styled.div`
   }
 `;
 
-export const Header = ({ siteTitle }) => (
-  <StyledHeader>
-    <header
-      style={{
-        background: `white`,
-        borderBottom: `1px dashed grey`,
-        marginBottom: `1.45rem`
-      }}
-    >
-      {siteTitle}
-      <nav className="main-nav">
-        <Link to="/blog">Archive</Link>
-        <Link to="/about">About</Link>
-      </nav>
-    </header>
-  </StyledHeader>
-);
+export const Header = ({ siteTitle }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  console.log(theme, toggleTheme);
+  return (
+    <StyledHeader>
+      <header
+        style={{
+          borderBottom: `1px dashed grey`,
+          marginBottom: `1.45rem`
+        }}
+      >
+        {siteTitle}
+        <nav className="main-nav">
+          <button onClick={toggleTheme}>Toggle theme</button>
+          <Link to="/blog">Archive</Link>
+          <Link to="/about">About</Link>
+        </nav>
+      </header>
+    </StyledHeader>
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string

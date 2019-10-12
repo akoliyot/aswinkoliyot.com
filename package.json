@@ -7,6 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.0",
     "@mdx-js/react": "^1.5.0",
+    "@types/styled-components": "^4.1.19",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.29",
     "gatsby-image": "^2.2.24",
@@ -21,6 +22,7 @@
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-remark": "^2.6.10",
     "gatsby-transformer-sharp": "^2.2.20",
+    "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

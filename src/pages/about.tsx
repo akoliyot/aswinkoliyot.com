@@ -6,10 +6,10 @@ const Container = styled.div`
   background: #a2a2a2;
 `;
 
-const About = () => (
+const AboutPage = () => (
   <Container>
     <h1>About page</h1>
   </Container>
 );
 
-export default About;
+export default AboutPage;

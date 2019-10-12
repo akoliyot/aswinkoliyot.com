@@ -16,8 +16,9 @@ export const Profile: React.FC = () => {
   return (
     <StyledProfile>
       <img src={avatar} />
+      <label>asdf</label>
       <div>Aswin Koliyot</div>
-      <div>Thoughts written down</div>
+      <span>Thoughts written down</span>
     </StyledProfile>
   );
 };

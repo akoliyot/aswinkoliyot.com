@@ -1,14 +1,33 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { createGlobalStyle, ThemeContext } from "styled-components";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "./Header";
+import { lighten, darken } from "polished";
+import { ThemeProps } from "../pages/index";
 
-const StyledApp = styled.div`
-  font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+const silverChalice = "#aaaaaa";
+const silverChaliceLight = lighten(0.2, silverChalice);
+const silverChaliceDark = darken(0.2, silverChalice);
+
+const mischka = "#cdd2db";
+const outerSpace = "#2F363D";
+
+const GlobalStyles = createGlobalStyle<{ theme: ThemeProps }>`
+body {
+    background: ${({ theme }) => theme.background};
+  }
 `;
 
-export const App: React.FC = ({ children }) => {
+const StyledAppWrapper = styled.div`
+  img {
+    opacity: 0.2;
+  }
+`;
+
+export const AppWrapper: React.FC = ({ children }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -20,7 +39,8 @@ export const App: React.FC = ({ children }) => {
   `);
 
   return (
-    <StyledApp>
+    <StyledAppWrapper>
+      <GlobalStyles theme={theme} />
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
@@ -37,6 +57,6 @@ export const App: React.FC = ({ children }) => {
       <Header />
 
       {children}
-    </StyledApp>
+    </StyledAppWrapper>
   );
 };
