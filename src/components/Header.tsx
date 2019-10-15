@@ -5,13 +5,13 @@ import styled from "styled-components";
 import { ThemeContext } from "styled-components";
 
 const StyledHeader = styled.div`
-  background: orange;
   nav {
     text-align: right;
+    padding: 15px;
 
     a {
       color: #5badf0;
-      font-size: 13px;
+      font-size: 0.8rem;
       line-height: 1.35;
       border-radius: 3px;
     }
@@ -23,12 +23,7 @@ export const Header = ({ siteTitle }) => {
   console.log(theme, toggleTheme);
   return (
     <StyledHeader>
-      <header
-        style={{
-          borderBottom: `1px dashed grey`,
-          marginBottom: `1.45rem`
-        }}
-      >
+      <header>
         {siteTitle}
         <nav className="main-nav">
           <button onClick={toggleTheme}>Toggle theme</button>

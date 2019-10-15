@@ -5,6 +5,12 @@ import { Layout } from "../components/Layout";
 import { Profile } from "../components/Profile";
 import { AppWrapper } from "../components/AppWrapper";
 import { ThemeProvider } from "styled-components";
+import { lighten, darken } from "polished";
+import styled from "styled-components";
+
+const silverChalice = "#aaaaaa";
+const silverChaliceLight = lighten(0.2, silverChalice);
+const silverChaliceDark = darken(0.2, silverChalice);
 
 const theme = {
   light: {
@@ -14,7 +20,14 @@ const theme = {
     background: "black"
   }
 };
+
 export type ThemeProps = typeof theme.light;
+
+const StyledIndexPage = styled.div`
+  .postList {
+    margin-top: 100px;
+  }
+`;
 
 const IndexPage = ({
   data: {
@@ -35,7 +48,9 @@ const IndexPage = ({
       <AppWrapper>
         <Profile />
         <Layout>
-          <div>{Posts}</div>
+          <StyledIndexPage>
+            <div className="postList">{Posts}</div>
+          </StyledIndexPage>
         </Layout>
       </AppWrapper>
     </ThemeProvider>

@@ -6,27 +6,24 @@ import { Header } from "./Header";
 import { lighten, darken } from "polished";
 import { ThemeProps } from "../pages/index";
 
-const silverChalice = "#aaaaaa";
-const silverChaliceLight = lighten(0.2, silverChalice);
-const silverChaliceDark = darken(0.2, silverChalice);
-
 const mischka = "#cdd2db";
 const outerSpace = "#2F363D";
 
 const GlobalStyles = createGlobalStyle<{ theme: ThemeProps }>`
+html {
+  font-size: 16px;
+}
 body {
+    margin: 0;
+    font-family: "Helvetica Neue", helvetica, Arial, sans-serif;
     background: ${({ theme }) => theme.background};
   }
 `;
 
-const StyledAppWrapper = styled.div`
-  img {
-    opacity: 0.2;
-  }
-`;
+const StyledAppWrapper = styled.div``;
 
 export const AppWrapper: React.FC = ({ children }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const data = useStaticQuery(graphql`
     query {
