@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const StyledPostLink = styled.div`
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 
   a {
     font-weight: bold;
