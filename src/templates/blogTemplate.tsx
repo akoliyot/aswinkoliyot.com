@@ -3,8 +3,6 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { AppWrapper } from "../components/AppWrapper";
-import { ThemeProvider } from "styled-components";
-import { ThemeWrapper } from "../themes/Theme";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
@@ -18,18 +16,16 @@ export default function Template({
     : null;
 
   return (
-    <ThemeWrapper>
-      <AppWrapper>
-        <div className="blog-post-container">
-          <div className="blog-post">
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.date}</h2>
-            {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-            <MDXRenderer>{body}</MDXRenderer>
-          </div>
+    <AppWrapper>
+      <div className="blog-post-container">
+        <div className="blog-post">
+          <h1>{frontmatter.title}</h1>
+          <h2>{frontmatter.date}</h2>
+          {featuredImgFluid && <Img fluid={featuredImgFluid} />}
+          <MDXRenderer>{body}</MDXRenderer>
         </div>
-      </AppWrapper>
-    </ThemeWrapper>
+      </div>
+    </AppWrapper>
   );
 }
 export const pageQuery = graphql`

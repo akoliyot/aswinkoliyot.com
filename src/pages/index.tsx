@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import { PostLink } from "../components/postLink";
 import { Layout } from "../components/Layout";
 import { Profile } from "../components/Profile";
 import { AppWrapper } from "../components/AppWrapper";
-import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
-import { ThemeWrapper } from "../themes/Theme";
 
 const StyledIndexPage = styled.div`
   .postList {
@@ -23,16 +21,14 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
   return (
-    <ThemeWrapper>
-      <AppWrapper>
-        <Profile />
-        <Layout>
-          <StyledIndexPage>
-            <div className="postList">{Posts}</div>
-          </StyledIndexPage>
-        </Layout>
-      </AppWrapper>
-    </ThemeWrapper>
+    <AppWrapper>
+      <Profile />
+      <Layout>
+        <StyledIndexPage>
+          <div className="postList">{Posts}</div>
+        </StyledIndexPage>
+      </Layout>
+    </AppWrapper>
   );
 };
 export default IndexPage;

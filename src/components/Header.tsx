@@ -19,8 +19,7 @@ const StyledHeader = styled.div`
 `;
 
 export const Header = ({ siteTitle }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-  console.log(theme, toggleTheme);
+  const { toggleTheme } = useContext(ThemeContext);
   return (
     <StyledHeader>
       <header>

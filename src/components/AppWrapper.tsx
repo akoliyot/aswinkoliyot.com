@@ -1,41 +1,17 @@
 import React, { useContext } from "react";
-import styled, { createGlobalStyle, ThemeContext } from "styled-components";
+import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "./Header";
-import { lighten, darken } from "polished";
-import { ThemeProps } from "../themes/Theme";
+import { ThemeProps, ThemeWrapper } from "../themes/Theme";
 
 const mischka = "#cdd2db";
 const outerSpace = "#2F363D";
 
-const GlobalStyles = createGlobalStyle<{ theme: ThemeProps }>`
-html {
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", helvetica, Arial, sans-serif;
-  background: ${({ theme }) => theme.background};
-}
-
-code {
-  background: #fff;
-  font-size: 11px;
-  padding: 4px;
-  border: none;
-  box-shadow: inset 0 0 0 1px #e4ebf2;
-  border-radius: 4px;
-  overflow: scroll;
-  font-family: Menlo,Monaco,Courier,monospace;
-}
-`;
-
 const StyledAppWrapper = styled.div``;
 
 export const AppWrapper: React.FC = ({ children }) => {
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
 
   const data = useStaticQuery(graphql`
     query {
@@ -49,7 +25,6 @@ export const AppWrapper: React.FC = ({ children }) => {
 
   return (
     <StyledAppWrapper>
-      <GlobalStyles theme={theme} />
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
@@ -63,9 +38,10 @@ export const AppWrapper: React.FC = ({ children }) => {
         />
       </Helmet>
 
-      <Header />
-
-      {children}
+      <ThemeWrapper>
+        <Header />
+        {children}
+      </ThemeWrapper>
     </StyledAppWrapper>
   );
 };
