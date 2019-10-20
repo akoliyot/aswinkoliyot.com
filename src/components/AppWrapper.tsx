@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "./Header";
 import { lighten, darken } from "polished";
-import { ThemeProps } from "../pages/index";
+import { ThemeProps } from "../themes/Theme";
 
 const mischka = "#cdd2db";
 const outerSpace = "#2F363D";
@@ -13,11 +13,23 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeProps }>`
 html {
   font-size: 16px;
 }
+
 body {
-    margin: 0;
-    font-family: "Helvetica Neue", helvetica, Arial, sans-serif;
-    background: ${({ theme }) => theme.background};
-  }
+  margin: 0;
+  font-family: "Helvetica Neue", helvetica, Arial, sans-serif;
+  background: ${({ theme }) => theme.background};
+}
+
+code {
+  background: #fff;
+  font-size: 11px;
+  padding: 4px;
+  border: none;
+  box-shadow: inset 0 0 0 1px #e4ebf2;
+  border-radius: 4px;
+  overflow: scroll;
+  font-family: Menlo,Monaco,Courier,monospace;
+}
 `;
 
 const StyledAppWrapper = styled.div``;
