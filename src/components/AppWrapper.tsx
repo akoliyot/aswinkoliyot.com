@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "./Header";
-import { ThemeProps, ThemeWrapper } from "../themes/Theme";
+import { ThemeWrapper } from "../themes/Theme";
 import { Layout } from "./Layout";
 
 const mischka = "#cdd2db";
@@ -12,8 +12,6 @@ const outerSpace = "#2F363D";
 const StyledAppWrapper = styled.div``;
 
 export const AppWrapper: React.FC = ({ children }) => {
-  // const { theme } = useContext(ThemeContext);
-
   const data = useStaticQuery(graphql`
     query {
       site {

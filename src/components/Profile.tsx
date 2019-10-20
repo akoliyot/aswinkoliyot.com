@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import avatar from "../images/avatar.png";
 import styled from "styled-components";
+import { ThemeProps } from "../themes/Theme";
+import { ThemeContext } from "styled-components";
 
-const StyledProfile = styled.div`
+const StyledProfile = styled.div<{ theme: ThemeProps }>`
   text-align: center;
-  margin-top: 50px;
+  margin: ${({ theme }) => `${theme.spacing.md} auto`};
 
   img {
     height: 80px;
@@ -29,8 +31,10 @@ const StyledProfile = styled.div`
 `;
 
 export const Profile: React.FC = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <StyledProfile>
+    <StyledProfile theme={theme}>
       <img src={avatar} />
       <div className="title">Aswin Koliyot</div>
       <div className="tagline">Thoughts written down</div>

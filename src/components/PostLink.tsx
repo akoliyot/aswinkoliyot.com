@@ -38,6 +38,10 @@ const StyledPostLink = styled.div`
     color: #aaaaaa;
     max-width: 420px;
   }
+
+  :last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const PostLink = ({ post }) => (

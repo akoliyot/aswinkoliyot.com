@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { ThemeContext } from "styled-components";
+import { ThemeProps } from "../themes/Theme";
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.div<{ theme: ThemeProps }>`
   nav {
     text-align: right;
-    padding: 15px;
+    padding: ${({ theme }) => theme.spacing.xs};
 
     a {
       color: #5badf0;
@@ -19,9 +20,9 @@ const StyledHeader = styled.div`
 `;
 
 export const Header = ({ siteTitle }) => {
-  const { toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
-    <StyledHeader>
+    <StyledHeader theme={theme}>
       <header>
         {siteTitle}
         <nav className="main-nav">

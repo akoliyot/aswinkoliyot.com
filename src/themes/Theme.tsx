@@ -31,7 +31,13 @@ code {
 
 const theme = {
   light: {
-    background: "white"
+    background: "white",
+    spacing: {
+      xs: "15px",
+      sm: "30px",
+      md: "60px",
+      lg: "100px"
+    }
   },
   dark: {
     background: "black"
