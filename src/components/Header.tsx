@@ -25,7 +25,9 @@ export const Header = ({ siteTitle }) => {
       <header>
         {siteTitle}
         <nav className="main-nav">
-          <button onClick={toggleTheme}>Toggle theme</button>
+          <Link mode="default" onClick={toggleTheme} to="#">
+            Toggle Theme
+          </Link>
           <Link to="/blog">Archive</Link>
           <Link to="/about">About</Link>
         </nav>
