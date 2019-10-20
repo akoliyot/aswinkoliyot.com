@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { PostLink } from "../components/postLink";
-import { Layout } from "../components/Layout";
 import { Profile } from "../components/Profile";
 import { AppWrapper } from "../components/AppWrapper";
 import styled from "styled-components";
@@ -23,11 +22,10 @@ const IndexPage = ({
   return (
     <AppWrapper>
       <Profile />
-      <Layout>
-        <StyledIndexPage>
-          <div className="postList">{Posts}</div>
-        </StyledIndexPage>
-      </Layout>
+
+      <StyledIndexPage>
+        <div className="postList">{Posts}</div>
+      </StyledIndexPage>
     </AppWrapper>
   );
 };

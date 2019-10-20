@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { Header } from "./Header";
 import { ThemeProps, ThemeWrapper } from "../themes/Theme";
+import { Layout } from "./Layout";
 
 const mischka = "#cdd2db";
 const outerSpace = "#2F363D";
@@ -40,7 +41,7 @@ export const AppWrapper: React.FC = ({ children }) => {
 
       <ThemeWrapper>
         <Header />
-        {children}
+        <Layout>{children}</Layout>
       </ThemeWrapper>
     </StyledAppWrapper>
   );
