@@ -5,23 +5,8 @@ import { Layout } from "../components/Layout";
 import { Profile } from "../components/Profile";
 import { AppWrapper } from "../components/AppWrapper";
 import { ThemeProvider } from "styled-components";
-import { lighten, darken } from "polished";
 import styled from "styled-components";
-
-const silverChalice = "#aaaaaa";
-const silverChaliceLight = lighten(0.2, silverChalice);
-const silverChaliceDark = darken(0.2, silverChalice);
-
-const theme = {
-  light: {
-    background: "white"
-  },
-  dark: {
-    background: "black"
-  }
-};
-
-export type ThemeProps = typeof theme.light;
+import { ThemeWrapper } from "../themes/Theme";
 
 const StyledIndexPage = styled.div`
   .postList {
@@ -34,17 +19,11 @@ const IndexPage = ({
     allMdx: { edges }
   }
 }) => {
-  const [activeTheme, setActiveTheme] = useState(theme.light);
-  const toggleTheme = () => {
-    activeTheme === theme.light
-      ? setActiveTheme(theme.dark)
-      : setActiveTheme(theme.light);
-  };
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
   return (
-    <ThemeProvider theme={{ theme: activeTheme, toggleTheme }}>
+    <ThemeWrapper>
       <AppWrapper>
         <Profile />
         <Layout>
@@ -53,7 +32,7 @@ const IndexPage = ({
           </StyledIndexPage>
         </Layout>
       </AppWrapper>
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 };
 export default IndexPage;

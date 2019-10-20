@@ -4,20 +4,11 @@ import Img from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { AppWrapper } from "../components/AppWrapper";
 import { ThemeProvider } from "styled-components";
-
-const theme = {
-  light: {
-    background: "white"
-  },
-  dark: {
-    background: "black"
-  }
-};
+import { ThemeWrapper } from "../themes/Theme";
 
 export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }) {
-  console.log(data);
   const { mdx } = data; // data.markdownRemark holds our post data
   const { frontmatter, body } = mdx;
 
@@ -27,7 +18,7 @@ export default function Template({
     : null;
 
   return (
-    <ThemeProvider theme={{ theme: theme.light, toggleTheme: () => false }}>
+    <ThemeWrapper>
       <AppWrapper>
         <div className="blog-post-container">
           <div className="blog-post">
@@ -38,7 +29,7 @@ export default function Template({
           </div>
         </div>
       </AppWrapper>
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 }
 export const pageQuery = graphql`
