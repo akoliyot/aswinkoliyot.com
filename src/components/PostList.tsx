@@ -7,6 +7,7 @@ import { ThemeContext } from "styled-components";
 
 const StyledPostList = styled.div<{ theme: ThemeProps }>`
   padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.xs}`};
+  margin-bottom: 50px;
 `;
 
 export const PostList: React.FC<any> = props => {

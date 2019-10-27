@@ -16,15 +16,20 @@ const StyledPostLink = styled.div`
   .header {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
   }
 
   .title {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
 
   .date {
-    font-weight: 300;
-    font-size: 17px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+
+    /* font-weight: 300;
+    font-size: 17px; */
     float: right;
     position: relative;
     top: 1px;
@@ -33,7 +38,8 @@ const StyledPostLink = styled.div`
 
   .excerpt {
     font-weight: normal;
-    font-size: 17px;
+    font-size: 1rem;
+    /* font-size: 17px; */
     line-height: 1.6;
     color: #aaaaaa;
     max-width: 420px;

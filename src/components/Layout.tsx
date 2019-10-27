@@ -9,6 +9,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import { Footer } from "./Footer";
+import styled from "styled-components";
+
+const StyledLayout = styled.div`
+  max-width: 600px;
+`;
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,10 +27,10 @@ export const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <StyledLayout>
       <main>{children}</main>
       <Footer />
-    </>
+    </StyledLayout>
   );
 };
 

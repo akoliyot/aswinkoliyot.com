@@ -11,6 +11,7 @@ const StyledHeader = styled.div<{ theme: ThemeProps }>`
     padding: ${({ theme }) => theme.spacing.xs};
 
     a {
+      padding: 10px 15px;
       color: #5badf0;
       font-size: 0.8rem;
       line-height: 1.35;
