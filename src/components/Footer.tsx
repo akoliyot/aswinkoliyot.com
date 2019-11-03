@@ -34,13 +34,22 @@ export const Footer: React.FC = () => {
   return (
     <StyledFooter theme={theme}>
       <div className="socialIcons">
-        <IconButton icon={behance} href="https://airbnb.com" />
-        <IconButton icon={codepen} href="https://airbnb.com" />
-        <IconButton icon={github} href="https://airbnb.com" />
-        <IconButton icon={goodReads} href="https://airbnb.com" />
-        <IconButton icon={linkedIn} href="https://airbnb.com" />
-        <IconButton icon={stackOverflow} href="https://airbnb.com" />
-        <IconButton icon={twitter} href="https://airbnb.com" />
+        <IconButton icon={behance} href="https://www.behance.net/akoliyot" />
+        <IconButton icon={codepen} href="https://codepen.io/akoliyot/" />
+        <IconButton icon={github} href="https://github.com/akoliyot" />
+        <IconButton
+          icon={goodReads}
+          href="https://www.goodreads.com/akoliyot"
+        />
+        <IconButton
+          icon={linkedIn}
+          href="https://www.linkedin.com/in/aswinkoliyot/"
+        />
+        <IconButton
+          icon={stackOverflow}
+          href="https://stackoverflow.com/users/3959742/aswin-koliyot"
+        />
+        <IconButton icon={twitter} href="https://twitter.com/AKoliyot" />
       </div>
 
       <div>
