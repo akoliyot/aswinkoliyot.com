@@ -9,13 +9,29 @@ tags: [
 ]
 ---
 
-![settings](./../../images/posts/2017/wallhaven-image-page-2.png)
-![settings](./../../images/posts/2017/wallhaven-image-page.png)
-![settings](./../../images/posts/2017/wallhaven-image-properties.png)
-![settings](./../../images/posts/2017/wallhaven-latest.png)
-![settings](./../../images/posts/2017/wallhaven-random.png)
-![settings](./../../images/posts/2017/wallhaven-search.png)
-![settings](./../../images/posts/2017/wallhaven-settings.png)
+import { Slider } from '../../components/Slider';
+import { PhotoSwipeInitializer } from '../../components/PhotoSwipeInitializer';
+
+import ImageDetails1 from './../../images/posts/2017/wallhaven-image-page.png';
+import ImageDetails2 from './../../images/posts/2017/wallhaven-image-page-2.png';
+import ImageProperties from './../../images/posts/2017/wallhaven-image-properties.png';
+import Latest from './../../images/posts/2017/wallhaven-image-properties.png';
+import Random from './../../images/posts/2017/wallhaven-random.png';
+import Search from './../../images/posts/2017/wallhaven-search.png';
+import Settings from './../../images/posts/2017/wallhaven-settings.png';
+import TilesWithBg from './../../images/posts/2017/wp-tiles-with-bg.png';
+
+<Slider>
+  <div><img src={ImageDetails1} /></div>
+  <div><img src={ImageDetails2} /></div>
+  <div><img src={ImageProperties} /></div>
+  <div><img src={Latest} /></div>
+  <div><img src={Random} /></div>
+  <div><img src={Search} /></div>
+  <div><img src={Settings} /></div>
+</Slider>
+
+# Hallo
 
 These are screenshots from an app that I was building, one that I never quite finished.
 
@@ -25,6 +41,11 @@ It was in the middle of Winter in London, I had just completed my Masters educat
 With no relevant work experience or an impressive portfolio, I knew getting my career started would be challenging. So taking inspiration from other top programmers, I decided to build something of my own. 
 
 At the time I was using a Lumia 520 and had recently upgraded to Windows Phone 8.1. The update supported background images on the start screen and you could see it like below. 
+
+<figure>
+  <img src={TilesWithBg} />
+  <figcaption>This is some caption</figcaption>
+</figure>
 
 {{< figure src="img/tiles-with-bg.png" caption="Tile background images on Windows Phone 8.1 © Microsoft Corporation" alt="Tile background images on Windows Phone 8.1 © Microsoft Corporation" >}}
 
@@ -51,3 +72,6 @@ When I started writing this article, I wanted to run the app again. So I install
 
 So I decided I would just keep it on GitHub for now. If you'd like to take a look you can [find it here](https://github.com/akoliyot/wallhaven). 
 
+<PhotoSwipeInitializer />
+
+# Aswin here

@@ -28,6 +28,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
+
+  console.log(blogPostTemplate);
+
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
