@@ -47,7 +47,6 @@ export default function Template({
 
   return (
     <AppWrapper>
-<<<<<<< HEAD:src/templates/blogTemplate.tsx
       <h1>Hallo</h1>
 
       <div className="blog-post-container">
@@ -128,7 +127,6 @@ export default function Template({
           </div>
         </div>
       </div>
-=======
       <StyledPost>
         <div className="post">
           <div className="blog-post">
@@ -146,7 +144,6 @@ export default function Template({
           </div>
         </div>
       </StyledPost>
->>>>>>> c1c33b7ff648da91910e01c85cf13d884e2a29f8:src/templates/PostTemplate.tsx
     </AppWrapper>
   );
 }

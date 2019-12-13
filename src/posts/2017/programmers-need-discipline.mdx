@@ -11,6 +11,7 @@ tags: [
 
 import { Slider } from '../../components/Slider';
 import { PhotoSwipeInitializer } from '../../components/PhotoSwipeInitializer';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 
 import ImageDetails1 from './../../images/posts/2017/wallhaven-image-page.png';
 import ImageDetails2 from './../../images/posts/2017/wallhaven-image-page-2.png';
@@ -30,6 +31,15 @@ import TilesWithBg from './../../images/posts/2017/wp-tiles-with-bg.png';
   <div><img src={Search} /></div>
   <div><img src={Settings} /></div>
 </Slider>
+
+
+<ModalGateway>
+        {true ? (
+          <Modal onClose={this.toggleModal}>
+            <Carousel views={[{ src: Settings} , {src: Search }]} />
+          </Modal>
+        ) : null}
+      </ModalGateway>
 
 # Hallo
 
