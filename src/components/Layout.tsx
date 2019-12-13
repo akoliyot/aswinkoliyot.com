@@ -12,7 +12,8 @@ import { Footer } from "./Footer";
 import styled from "styled-components";
 
 const StyledLayout = styled.div`
-  max-width: 600px;
+  max-width: 520px;
+  margin: 0 auto;
 `;
 
 export const Layout = ({ children }) => {

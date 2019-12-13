@@ -10,8 +10,8 @@ tags: [
 ---
 
 import { Slider } from '../../components/Slider';
-import { PhotoSwipeInitializer } from '../../components/PhotoSwipeInitializer';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import { Lightbox } from '../../components/Lightbox';
+import { SRLWrapper } from "simple-react-lightbox";
 
 import ImageDetails1 from './../../images/posts/2017/wallhaven-image-page.png';
 import ImageDetails2 from './../../images/posts/2017/wallhaven-image-page-2.png';
@@ -22,28 +22,19 @@ import Search from './../../images/posts/2017/wallhaven-search.png';
 import Settings from './../../images/posts/2017/wallhaven-settings.png';
 import TilesWithBg from './../../images/posts/2017/wp-tiles-with-bg.png';
 
-<Slider>
-  <div><img src={ImageDetails1} /></div>
-  <div><img src={ImageDetails2} /></div>
-  <div><img src={ImageProperties} /></div>
-  <div><img src={Latest} /></div>
-  <div><img src={Random} /></div>
-  <div><img src={Search} /></div>
-  <div><img src={Settings} /></div>
-</Slider>
-
-
-<ModalGateway>
-        {true ? (
-          <Modal onClose={this.toggleModal}>
-            <Carousel views={[{ src: Settings} , {src: Search }]} />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-
-# Hallo
-
 These are screenshots from an app that I was building, one that I never quite finished.
+
+<SRLWrapper className="asdf" options={{ showThumbnails: false, showCaption: false }}>
+  <div className="asdf">
+    <div><img src={ImageDetails1} alt="1" /></div>
+    <div><img src={ImageDetails2} alt="1" /></div>
+    <div><img src={ImageProperties} alt="1" /></div>
+    <div><img src={Latest} alt="1" /></div>
+    <div><img src={Random} alt="1" /></div>
+    <div><img src={Search} alt="1" /></div>
+    <div><img src={Settings} alt="1" /></div>
+  </div>
+</SRLWrapper>
 
 ## How it all began
 It was in the middle of Winter in London, I had just completed my Masters education and had a few months left before I was heading back home. 
@@ -54,11 +45,8 @@ At the time I was using a Lumia 520 and had recently upgraded to Windows Phone 8
 
 <figure>
   <img src={TilesWithBg} />
-  <figcaption>This is some caption</figcaption>
+  <figcaption>Tile background images on Windows Phone 8.1 © Microsoft Corporation</figcaption>
 </figure>
-
-{{< figure src="img/tiles-with-bg.png" caption="Tile background images on Windows Phone 8.1 © Microsoft Corporation" alt="Tile background images on Windows Phone 8.1 © Microsoft Corporation" >}}
-
 
 So I started looking for good wallpapers. As far as I knew, none of the wallpaper apps at the time on the Windows app store fetched content from [Wallhaven](http://wallhaven.cc/). I knew right then what I was going to build and it was simple enough for a first project. 
 
@@ -80,8 +68,4 @@ The projects at work required me to use Java and everything else related to fron
 
 When I started writing this article, I wanted to run the app again. So I installed Visual Studio, but the latest version didn't support Windows Phone 8.1 projects. Probably had to do with Windows 10 Mobile being the current OS. 
 
-So I decided I would just keep it on GitHub for now. If you'd like to take a look you can [find it here](https://github.com/akoliyot/wallhaven). 
-
-<PhotoSwipeInitializer />
-
-# Aswin here
+So I decided I would just keep it on GitHub for now. If you'd like to take a look you can [find it here](https://github.com/akoliyot/wallhaven).

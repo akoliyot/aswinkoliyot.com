@@ -11,6 +11,10 @@ const StyledPost = styled.div`
   p {
     text-align: justify;
     line-height: 1.7;
+    word-spacing: 1px;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
   }
 
   ul {
@@ -24,12 +28,54 @@ const StyledPost = styled.div`
     }
   }
 
+  figure {
+    text-align: center;
+    margin: 3rem 0;
+
+    img {
+      max-width: 100%;
+    }
+
+    figcaption {
+      margin: 0.4rem;
+      font-size: 0.7rem;
+      color: #77776c;
+    }
+  }
+
   .header {
     text-align: center;
+    margin-bottom: 3rem;
   }
 
   .title {
     font-size: 1.7rem;
+    font-weight: 300;
+  }
+
+  .meta {
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: #b2b9be;
+
+    span {
+      margin-left: 10px;
+      margin-right: 10px;
+      position: relative
+    }
+
+    span:not(:last-child)::after {
+      content: '•';
+      position: absolute;
+      right: -13px;
+    }
+
+    span::after::last-child {
+      
+    }
+  }
+
+  h2 {
     font-weight: 300;
   }
 `;
@@ -38,7 +84,7 @@ export default function Template({
   data // this prop will be injected by the GraphQL query below.
 }) {
   const { mdx } = data; // data.markdownRemark holds our post data
-  const { frontmatter, body } = mdx;
+  const { frontmatter, body, fields } = mdx;
 
   let featuredImgFluid;
   featuredImgFluid = frontmatter["featuredImage"]
@@ -47,95 +93,15 @@ export default function Template({
 
   return (
     <AppWrapper>
-      <h1>Hallo</h1>
-
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          {featuredImgFluid && <Img fluid={featuredImgFluid} />}
-          <MDXRenderer>{body}</MDXRenderer>
-        </div>
-      </div>
-
-      {/* Root element of PhotoSwipe. Must have class pswp. */}
-      <div className="pswp" tabIndex={-1} role="dialog" aria-hidden="true">
-        {/* Background of PhotoSwipe. It's a separate element as animating opacity
-        is faster than rgba(). --> */}
-        <div className="pswp__bg"></div>
-        {/* Slides wrapper with overflow:hidden. --> */}
-        <div className="pswp__scroll-wrap">
-          {/* Container that holds slides. PhotoSwipe keeps only 3 of them in the
-          DOM to save memory. Don't modify these 3 pswp__item elements, data is
-          added later on. */}
-          <div className="pswp__container">
-            <div className="pswp__item"></div>
-            <div className="pswp__item"></div>
-            <div className="pswp__item"></div>
-          </div>
-          {/* Default (PhotoSwipeUI_Default) interface on top of sliding area. Can
-          be changed. */}
-          <div className="pswp__ui pswp__ui--hidden">
-            <div className="pswp__top-bar">
-              {/* Controls are self-explanatory. Order can be changed. */}
-              <div className="pswp__counter"></div>
-              <button
-                className="pswp__button pswp__button--close"
-                title="Close (Esc)"
-              ></button>
-              <button
-                className="pswp__button pswp__button--share"
-                title="Share"
-              ></button>
-              <button
-                className="pswp__button pswp__button--fs"
-                title="Toggle fullscreen"
-              ></button>
-              <button
-                className="pswp__button pswp__button--zoom"
-                title="Zoom in/out"
-              ></button>
-              {/* Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
-              element will get class pswp__preloader--active when preloader is
-              running. */}
-              <div className="pswp__preloader">
-                <div className="pswp__preloader__icn">
-                  <div className="pswp__preloader__cut">
-                    <div className="pswp__preloader__donut"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-              <div className="pswp__share-tooltip"></div>
-            </div>
-
-            <button
-              className="pswp__button pswp__button--arrow--left"
-              title="Previous (arrow left)"
-            ></button>
-
-            <button
-              className="pswp__button pswp__button--arrow--right"
-              title="Next (arrow right)"
-            ></button>
-
-            <div className="pswp__caption">
-              <div className="pswp__caption__center"></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <StyledPost>
         <div className="post">
           <div className="blog-post">
             <div className="header">
               <h1 className="title">{frontmatter.title}</h1>
-              <div>
-                <h2>{frontmatter.date}</h2>
-                {/* TODO: Insert words here */}
-                {/* TODO: Insert time here */}
+              <div className="meta">
+                <span>{frontmatter.date}</span> 
+                <span>{fields.readingTime.words} words</span>
+                <span>{fields.readingTime.text}</span>
               </div>
             </div>
 
@@ -151,6 +117,12 @@ export const pageQuery = graphql`
   query($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
       body
+      fields {
+        readingTime {
+          text
+          words
+        }
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

@@ -18,6 +18,10 @@ body {
   opacity: 1;
 }
 
+body.SRLOpened {
+  margin: 0 !important;
+}
+
 code {
   background: #fff;
   font-size: 11px;

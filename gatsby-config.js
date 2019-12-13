@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
+    'gatsby-remark-reading-time',
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typescript`,

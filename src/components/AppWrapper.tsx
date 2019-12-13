@@ -9,7 +9,9 @@ import { Layout } from "./Layout";
 const mischka = "#cdd2db";
 const outerSpace = "#2F363D";
 
-const StyledAppWrapper = styled.div``;
+const StyledAppWrapper = styled.div`
+  
+`;
 
 export const AppWrapper: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`

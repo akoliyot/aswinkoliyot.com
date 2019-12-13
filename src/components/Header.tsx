@@ -6,6 +6,8 @@ import { ThemeContext } from "styled-components";
 import { ThemeProps } from "../themes/Theme";
 
 const StyledHeader = styled.div<{ theme: ThemeProps }>`
+  margin-bottom: 2rem;
+  
   nav {
     text-align: right;
     padding: ${({ theme }) => theme.spacing.xs};
