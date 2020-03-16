@@ -8,10 +8,7 @@ tags: [
 	"story"
 ]
 ---
-
-import { Slider } from '../../components/Slider';
-import { Lightbox } from '../../components/Lightbox';
-import { SRLWrapper } from "simple-react-lightbox";
+import { LightboxWrapper } from '../../components/LightboxWrapper';
 
 import ImageDetails1 from './../../images/posts/2017/wallhaven-image-page.png';
 import ImageDetails2 from './../../images/posts/2017/wallhaven-image-page-2.png';
@@ -24,7 +21,7 @@ import TilesWithBg from './../../images/posts/2017/wp-tiles-with-bg.png';
 
 These are screenshots from an app that I was building, one that I never quite finished.
 
-<SRLWrapper className="asdf" options={{ showThumbnails: false, showCaption: false }}>
+<LightboxWrapper>
   <div className="asdf">
     <div><img src={ImageDetails1} alt="1" /></div>
     <div><img src={ImageDetails2} alt="1" /></div>
@@ -34,7 +31,7 @@ These are screenshots from an app that I was building, one that I never quite fi
     <div><img src={Search} alt="1" /></div>
     <div><img src={Settings} alt="1" /></div>
   </div>
-</SRLWrapper>
+</LightboxWrapper>
 
 ## How it all began
 It was in the middle of Winter in London, I had just completed my Masters education and had a few months left before I was heading back home. 

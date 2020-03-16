@@ -8,7 +8,7 @@
 
 import React from "react"
 import { Lightbox } from "./src/components/Lightbox";
- 
+
 export const wrapRootElement = ({ element }) => {
-  return <Lightbox>{element}</Lightbox>
+    return <Lightbox>{element}</Lightbox>
 }

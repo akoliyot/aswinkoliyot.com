@@ -1,6 +1,10 @@
 import React from 'react';
-import SimpleReactLightbox from "simple-react-lightbox";
 import styled from 'styled-components';
+
+let SimpleReactLightbox;
+if (typeof window !== 'undefined') {
+    SimpleReactLightbox = require("simple-react-lightbox").default;
+}
 
 
 // Max width - padding
@@ -8,7 +12,7 @@ const postWidth = 520 - 30;
 const imagePerRow = 3;
 const imageMargin = 3;
 // const imageSize = 157;
-const imageSize  = (postWidth - ((imageMargin * 2) * imagePerRow)) / 3;
+const imageSize = (postWidth - ((imageMargin * 2) * imagePerRow)) / 3;
 
 const imageContainerSize = imageSize * imagePerRow + ((imageMargin * 2) * imagePerRow)
 
@@ -48,11 +52,19 @@ const options = {
 };
 
 export const Lightbox: React.FC = ({ children }) => {
+    if (typeof window !== 'undefined' && SimpleReactLightbox) {
+        return (
+            <StyledLightbox>
+                <SimpleReactLightbox {...options}>
+                    {children}
+                </SimpleReactLightbox>
+            </StyledLightbox>
+        )
+    }
+
     return (
-        <StyledLightbox>
-            <SimpleReactLightbox {...options}>
+        <div className="generic-lightbox">
             {children}
-            </SimpleReactLightbox>
-        </StyledLightbox>
+        </div>
     )
 }

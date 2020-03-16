@@ -13,7 +13,7 @@
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^4.1.19",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.15.29",
+    "gatsby": "^2.19.44",
     "gatsby-cli": "^2.10.10",
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -51,6 +51,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
