@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { StaticQuery, graphql } from "gatsby";
-import { PostLink } from "../components/postLink";
+import { PostLink } from "../components/PostLink";
 import styled from "styled-components";
 import { ThemeProps } from "../themes/Theme";
 import { ThemeContext } from "styled-components";
