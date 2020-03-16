@@ -99,7 +99,7 @@ export default function Template({
             <div className="header">
               <h1 className="title">{frontmatter.title}</h1>
               <div className="meta">
-                <span>{frontmatter.date}</span> 
+                <span>{frontmatter.date}</span>
                 <span>{fields.readingTime.words} words</span>
                 <span>{fields.readingTime.text}</span>
               </div>
