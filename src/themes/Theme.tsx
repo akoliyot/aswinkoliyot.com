@@ -21,17 +21,7 @@ body {
 body.SRLOpened {
   margin: 0 !important;
 }
-
-code {
-  background: #fff;
-  font-size: 11px;
-  padding: 4px;
-  border: none;
-  box-shadow: inset 0 0 0 1px #e4ebf2;
-  border-radius: 4px;
-  overflow: scroll;
-  font-family: Menlo,Monaco,Courier,monospace;
-}`;
+`;
 
 const theme = {
   light: {

@@ -16,7 +16,6 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -29,6 +28,10 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 1200
             }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {}
           }
         ]
       }
@@ -49,6 +52,10 @@ module.exports = {
             options: {
               maxWidth: 1200
             }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {}
           }
         ]
       }

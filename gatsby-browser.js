@@ -8,6 +8,7 @@
 
 import React from "react"
 import { Lightbox } from "./src/components/Lightbox";
+require('prismjs/themes/prism-okaidia.css');
 
 export const wrapRootElement = ({ element }) => {
     return <Lightbox>{element}</Lightbox>
