@@ -42,7 +42,6 @@ const StyledPostLink = styled.div`
     /* font-size: 17px; */
     line-height: 1.6;
     color: #aaaaaa;
-    max-width: 420px;
   }
 
   :last-child {

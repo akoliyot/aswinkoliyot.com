@@ -9,7 +9,7 @@ import {
   goodReads,
   linkedIn,
   stackOverflow,
-  twitter
+  twitter,
 } from "../images/social-icons";
 import { Link } from "./Link";
 
