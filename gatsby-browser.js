@@ -6,10 +6,11 @@
 
 // You can delete this file if you're not using it
 
-import React from "react"
+import React from "react";
 import { Lightbox } from "./src/components/Lightbox";
-require('prismjs/themes/prism-okaidia.css');
+// require('prismjs/themes/prism-okaidia.css');
+require("./src/assets/github-theme.css");
 
 export const wrapRootElement = ({ element }) => {
-    return <Lightbox>{element}</Lightbox>
-}
+  return <Lightbox>{element}</Lightbox>;
+};
