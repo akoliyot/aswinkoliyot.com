@@ -8,7 +8,8 @@ import styled from "styled-components";
 const StyledPost = styled.div`
   padding: 15px;
 
-  p {
+  p,
+  ul {
     text-align: justify;
     line-height: 1.7;
     word-spacing: 1px;
@@ -61,17 +62,16 @@ const StyledPost = styled.div`
     span {
       margin-left: 10px;
       margin-right: 10px;
-      position: relative
+      position: relative;
     }
 
     span:not(:last-child)::after {
-      content: '•';
+      content: "•";
       position: absolute;
       right: -13px;
     }
 
     span::after::last-child {
-      
     }
   }
 
@@ -81,7 +81,7 @@ const StyledPost = styled.div`
 `;
 
 export default function Template({
-  data // this prop will be injected by the GraphQL query below.
+  data, // this prop will be injected by the GraphQL query below.
 }) {
   const { mdx } = data; // data.markdownRemark holds our post data
   const { frontmatter, body, fields } = mdx;
